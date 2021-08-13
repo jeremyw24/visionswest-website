@@ -94,7 +94,7 @@ export class Navigation extends Component {
               >
                 Live Services
                 <div className="Nav--GroupLinks">
-                  <NavLink to="/blog/" className="Nav--GroupLink">
+                  <NavLink to="/live/" className="Nav--GroupLink">
                     All Posts
                   </NavLink>
                   {subNav.posts.map((link, index) => (
