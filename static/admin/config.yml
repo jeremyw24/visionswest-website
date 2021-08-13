@@ -295,6 +295,7 @@ collections: # A list of collections the CMS should be able to edit
         options: ['Published', 'Featured', 'Draft']
         default: 'Published'
       - { label: Date / Order, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: Service Date, name: service_date, widget: date, format: 'YYYY-MM-DD' }
       - {
           label: Featured Image,
           name: featuredImage,
@@ -303,6 +304,9 @@ collections: # A list of collections the CMS should be able to edit
         }
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Content, name: body, widget: markdown }
+      - { label: Service URL, name: service_url, widget: string }
+      - { label: Graveside URL, name: graveside_url, widget: string }
+      - { label: Wedflow, name: wedflow, widget: string }
       - label: 'Categories'
         name: 'categories'
         widget: 'list'
