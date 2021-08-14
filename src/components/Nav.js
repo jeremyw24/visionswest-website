@@ -109,7 +109,31 @@ export class Navigation extends Component {
                 </div>
               </span>
             </div>
-            <NavLink to="/default/">Default</NavLink>
+            <div
+              className={`Nav--Group ${
+                this.state.activeSubNav === 'infoPages' ? 'active' : ''
+              }`}
+            >
+              <span
+                className={`NavLink Nav--GroupParent ${
+                  this.props.location.pathname.includes('infoPages')
+                    ? 'active'
+                    : ''
+                }`}
+                onClick={() => this.toggleSubNav('infoPages')}
+                onKeyDown={e => this.keyToggleSubNav(e, 'infoPages')}
+                tabIndex={0}
+                aria-label="Navigation"
+                role="button"
+              >
+                Film & Video
+                <div className="Nav--GroupLinks">
+                  <NavLink to="/weddings/" className="Nav--GroupLink">
+                    Weddings
+                  </NavLink>
+                </div>
+              </span>
+            </div>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
           <button
