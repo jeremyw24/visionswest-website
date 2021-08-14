@@ -72,40 +72,31 @@ export class Navigation extends Component {
           </Link>
           <div className="Nav--Links">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/components/">Components</NavLink>
             <div
               className={`Nav--Group ${
-                this.state.activeSubNav === 'posts' ? 'active' : ''
+                this.state.activeSubNav === 'film-video' ? 'active' : ''
               }`}
             >
               <span
                 className={`NavLink Nav--GroupParent ${
-                  this.props.location.pathname.includes('posts') ||
-                  this.props.location.pathname.includes('blog') ||
-                  this.props.location.pathname.includes('post-categories')
+                  this.props.location.pathname.includes('film-video')
                     ? 'active'
                     : ''
                 }`}
-                onClick={() => this.toggleSubNav('posts')}
-                onKeyDown={e => this.keyToggleSubNav(e, 'posts')}
+                onClick={() => this.toggleSubNav('film-video')}
+                onKeyDown={e => this.keyToggleSubNav(e, 'film-video')}
                 tabIndex={0}
                 aria-label="Navigation"
                 role="button"
               >
-                Live Services
+                Film & Video
                 <div className="Nav--GroupLinks">
-                  <NavLink to="/live/" className="Nav--GroupLink">
-                    All Posts
+                  <NavLink to="/weddings/" className="Nav--GroupLink">
+                    Weddings
                   </NavLink>
-                  {subNav.posts.map((link, index) => (
-                    <NavLink
-                      to={link.slug}
-                      key={'posts-subnav-link-' + index}
-                      className="Nav--GroupLink"
-                    >
-                      {link.title}
-                    </NavLink>
-                  ))}
+                  <NavLink to="/live-stream/" className="Nav--GroupLink">
+                    Live Stream
+                  </NavLink>
                 </div>
               </span>
             </div>
@@ -126,14 +117,46 @@ export class Navigation extends Component {
                 aria-label="Navigation"
                 role="button"
               >
-                Film & Video
+                Web & Digital
                 <div className="Nav--GroupLinks">
                   <NavLink to="/weddings/" className="Nav--GroupLink">
                     Weddings
                   </NavLink>
+                  <NavLink to="/live-stream/" className="Nav--GroupLink">
+                    Live Stream
+                  </NavLink>
                 </div>
               </span>
             </div>
+            <div
+              className={`Nav--Group ${
+                this.state.activeSubNav === 'infoPages' ? 'active' : ''
+              }`}
+            >
+              <span
+                className={`NavLink Nav--GroupParent ${
+                  this.props.location.pathname.includes('infoPages')
+                    ? 'active'
+                    : ''
+                }`}
+                onClick={() => this.toggleSubNav('infoPages')}
+                onKeyDown={e => this.keyToggleSubNav(e, 'infoPages')}
+                tabIndex={0}
+                aria-label="Navigation"
+                role="button"
+              >
+                Funeral Services
+                <div className="Nav--GroupLinks">
+                  <NavLink to="/weddings/" className="Nav--GroupLink">
+                    Memorial Videos
+                  </NavLink>
+                  <NavLink to="/live/" className="Nav--GroupLink">
+                    Live Stream Services
+                  </NavLink>
+                </div>
+              </span>
+            </div>
+            <NavLink to="/live/">Live Services</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
           <button
